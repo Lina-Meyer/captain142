@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Selected Boat</h1>
+
+  <h2><%= @boat.name %></h2>
+  <ul>
+    <li>
+      <%= @boat.category%>
+      <%= @boat.description %>
+      <%= @boat.price %>
+      <%= @boat.city %>
+      <%= @boat.capacity %>
+    </li>
+  </ul>
+  <br><br>
+  <%=link_to "See all boats", boats_path%>
+</div>
