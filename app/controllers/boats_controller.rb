@@ -35,5 +35,6 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
+
   end
 end
