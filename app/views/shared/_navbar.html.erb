@@ -7,19 +7,28 @@
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Book Your Boat</a>
-
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-1/p320x320/11181866_10156172003505078_8439188897008059856_n.jpg?_nc_cat=0&oh=a2daf82c37f67c5f14e4b23763faf115&oe=5B96C91A" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+
+          <% if current_user %>
+          <img src="https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-1/p320x320/11181866_10156172003505078_8439188897008059856_n.jpg?_nc_cat=0&oh=a2daf82c37f67c5f14e4b23763faf115&oe=5B96C91A" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <%= link_to 'Sign in', new_user_session_path %>
+          <% end %>
         </ul>
       </div>
     </div>
+  </div>
+
+  <div class="navbar-wagon-item">
+    <% if current_user.owned_boats.nil? %>
+      <%= link_to "Become a host", new_boat_path %>
+    <% else %>
+      <%= link_to "Your offers" %>
+    <% end %>
   </div>
 
   <!-- Dropdown appearing on mobile only -->
