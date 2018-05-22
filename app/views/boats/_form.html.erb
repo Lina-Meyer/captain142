@@ -1,24 +1,26 @@
-<%= simple_form_for(boat) do |f| %>
+<div class="col-md-8 col-md-offset-2">
+  <%= simple_form_for(boat) do |f| %>
   <% if boat.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% boat.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="errors-container">
+    <ul>
+      <% boat.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
 
-  <div class = "form-group">
-    <%= f.input :name, class: 'form-control' %>
-    <%= f.input :description, class: 'form-control' %>
-    <%= f.input :category, class: 'form-control' %>
+  <div class="form-group">
+    <%= f.input :name, class: 'form-control', label: false, placeholder: "name" %>
+    <%= f.input :description, class: 'form-control', label: false, placeholder: "description" %>
+    <%= f.input :category, class: 'form-control', label: false, placeholder: "category" %>
     <%= f.input :city, class: 'form-control' %>
-    <%= f.input :price, class: 'form-control' %>
-    <%= f.input :capacity, class: 'form-control' %>
+    <%= f.input :price, class: 'form-control', label: false, placeholder: "price" %>
+    <%= f.input :capacity, class: 'form-control', label: false, placeholder: "capacity" %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
   </div>
   <br>
   <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+  <% end %>
+</div>
