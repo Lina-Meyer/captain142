@@ -12,18 +12,19 @@
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <% if current_user %>
-          <img src="https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-1/p320x320/11181866_10156172003505078_8439188897008059856_n.jpg?_nc_cat=0&oh=a2daf82c37f67c5f14e4b23763faf115&oe=5B96C91A" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
-          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
-          </ul>
-        <% else %>
-          <div class="navbar-links">
-            <%= link_to 'Sign up', new_user_registration_path %>
-            <%= link_to 'Log in', new_user_session_path %>
-          </div>
-        <% end %>
-
+          <% if current_user %>
+            <div class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+              <%= cl_image_tag current_user.photo, width: 150, height: 150, crop: :thumb, gravity: :face %>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+              <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+            </ul> 
+          <% else %>
+            <div class="navbar-links">
+              <%= link_to 'Sign up', new_user_registration_path %>
+              <%= link_to 'Log in', new_user_session_path %>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>
