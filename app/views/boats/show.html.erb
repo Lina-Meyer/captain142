@@ -2,6 +2,7 @@
   <h1>Selected Boat</h1>
 
   <h2><%= @boat.name %></h2>
+  <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
   <ul>
     <li>
       <%= @boat.category%>

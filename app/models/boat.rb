@@ -8,4 +8,6 @@ class Boat < ApplicationRecord
   validates :name, presence:true
   # validates :availability, presence:true
   # validates :capacity, presence:true
+
+  mount_uploader :photo, PhotoUploader
 end
