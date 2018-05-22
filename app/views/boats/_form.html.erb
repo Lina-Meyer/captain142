@@ -1,13 +1,13 @@
-
-<%= simple_form_for(boat) do |f| %>
+<div>
+  <%= simple_form_for(boat) do |f| %>
   <% if boat.errors.any? %>
-    <div class="errors-container">
-      <ul>
-        <% boat.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
+  <div class="errors-container">
+    <ul>
+      <% boat.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
 
   <div class = "form-group">
@@ -22,4 +22,5 @@
   </div>
   <br>
   <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+  <% end %>
+</div>
