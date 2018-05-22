@@ -22,7 +22,7 @@ body {
   position: absolute;
   transition: transform 0.3s ease;
 }
-.card {
+.card-caroussel {
   z-index: -1;
   font-family: sans-serif;
   line-height: 20em;
@@ -53,17 +53,17 @@ body {
 
 }
 
-.card[data-scale="0"],
-.card[data-scale="4"] {
+.card-caroussel[data-scale="0"],
+.card-caroussel[data-scale="4"] {
   transform: scale(1);
   z-index: 0;
 }
-.card[data-scale="1"],
-.card[data-scale="3"] {
+.card-caroussel[data-scale="1"],
+.card-caroussel[data-scale="3"] {
   transform: scale(1.1);
   z-index: 1;
 }
-.card[data-scale="2"] {
+.card-caroussel[data-scale="2"] {
   transform: scale(1.2);
   z-index: 2;
 }
