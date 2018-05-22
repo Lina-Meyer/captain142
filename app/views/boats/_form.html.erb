@@ -1,4 +1,4 @@
-<div>
+<div class="col-md-8 col-md-offset-2">
   <%= simple_form_for(boat) do |f| %>
   <% if boat.errors.any? %>
   <div class="errors-container">
@@ -10,7 +10,7 @@
   </div>
   <% end %>
 
-  <div class = "form-group">
+  <div class="form-group">
     <%= f.input :name, class: 'form-control', label: false, placeholder: "name" %>
     <%= f.input :description, class: 'form-control', label: false, placeholder: "description" %>
     <%= f.input :category, class: 'form-control', label: false, placeholder: "category" %>
