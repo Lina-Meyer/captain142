@@ -1,9 +1,17 @@
 class BoatsController < ApplicationController
+
+  skip_before_action :authenticate_user!, only: [:home, :index, :show]
   def home
   end
 
   def index
-    @boats = Boat.all
+    @boats = Boat.where.not(latitude: nil, longitude: nil)
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude#,
+      }
+    end
   end
 
   def show
@@ -25,12 +33,15 @@ class BoatsController < ApplicationController
   end
 
   def edit
+
   end
 
   def update
+
   end
 
   def destroy
+
   end
 
   private
