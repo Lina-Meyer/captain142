@@ -5,7 +5,17 @@ class BoatsController < ApplicationController
   end
 
   def index
+<<<<<<< HEAD
     @boats = policy_scope(Boat).order(created_at: :desc)
+=======
+    @boats = Boat.where.not(latitude: nil, longitude: nil)
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude#,
+      }
+    end
+>>>>>>> 3e0027d4cb1b64f445653da3f30e77a75a6d241a
   end
 
   def show
