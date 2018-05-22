@@ -1,5 +1,6 @@
 class BoatsController < ApplicationController
   def home
+    @boats = Boat.all
   end
 
   def index
