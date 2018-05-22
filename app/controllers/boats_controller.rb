@@ -6,8 +6,11 @@ class BoatsController < ApplicationController
   end
 
   def index
-    @boats = Boat.where.not(latitude: nil, longitude: nil)
-    @markers = @boats.map do |boat|
+    @boats_with_location = Boat.where.not(latitude: nil, longitude: nil)
+    @boats_without_location = Boat.where(latitude: nil, longitude: nil)
+    @all_boats = @boats_with_location.to_a.concat(@boats_without_location.to_a)
+
+    @markers = @boats_with_location.map do |boat|
       {
         lat: boat.latitude,
         lng: boat.longitude#,

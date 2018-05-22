@@ -9,10 +9,19 @@
     <div class="inner">
       <% boats.each do |boat| %>
         <%= link_to boat_path(boat) do %>
-          <div class="card-caroussel">
-
-            <div class="boat-name"><%= boat.name %></div>
+        <% if boat.photo_url %>
+          <div class="card-caroussel" style="background-image: url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill %>')">
+            <div class="boat-name">
+              <p><%= boat.name %></p>
+            </div>
           </div>
+        <% else %>
+          <div class="card-caroussel" style="background-image: url('https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=049ea2defdc21889ecda0e93a7eecf05&auto=format&fit=crop&w=1050&q=80')">
+            <div class="boat-name">
+              <p><%= boat.name %></p>
+            </div>
+          </div>
+        <% end %>
         <% end %>
       <% end %>
     </div>
