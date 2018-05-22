@@ -1,11 +1,15 @@
 class BoatsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
+
   def home
     @boats = Boat.all
+    authorize @boats
   end
 
   def index
+    @boats = policy_scope(Boat).order(created_at: :desc)
+
     @boats = Boat.where.not(latitude: nil, longitude: nil)
     @markers = @boats.map do |boat|
       {
@@ -17,14 +21,17 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    authorize @boat
   end
 
   def new
     @boat = Boat.new
+    authorize @boat
   end
 
   def create
     @boat = Boat.new(boat_params)
+    authorize @boat
     @boat.user = current_user
     if @boat.save
       redirect_to boat_path(@boat)
