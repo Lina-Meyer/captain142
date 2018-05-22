@@ -6,6 +6,7 @@ gem 'cloudinary'
 gem 'carrierwave'
 
 gem 'bootsnap', require: false
+gem 'geocoder'
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
