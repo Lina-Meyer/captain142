@@ -35,10 +35,24 @@
   padding: 0 20px;
 }
 
-/* Navbar link */
-.navbar-wagon-link {
+.navbar-links a {
+  padding: 15px;
   color: #315376;
   font-size: 14px;
+  text-decoration: none;
+}
+
+.navbar-links a:hover {
+  color: #da552f;
+  text-decoration: none;
+}
+
+/* Navbar link */
+.navbar-wagon-link {
+  padding: 15px;
+  color: #315376;
+  font-size: 14px;
+  text-decoration: none;
 }
 .navbar-wagon-link:hover {
   color: #da552f;
