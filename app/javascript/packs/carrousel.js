@@ -4,7 +4,8 @@ let scale = 0;
 
 setTimeout(() => {
 const inner = document.querySelector(".inner");
-const cards = Array.from(document.getElementsByClassName("card"));
+const cards = Array.from(document.getElementsByClassName("card-caroussel"));
+console.log(cards)
 function slideAndScale() {
   cards.map((card, i) => {
     card.setAttribute("data-scale", i + scale);

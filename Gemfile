@@ -4,6 +4,7 @@ ruby '2.4.4'
 gem 'devise'
 gem 'cloudinary'
 gem 'carrierwave'
+gem "pundit"
 
 gem 'bootsnap', require: false
 gem 'geocoder'
