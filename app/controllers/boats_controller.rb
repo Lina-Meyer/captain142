@@ -15,21 +15,26 @@ class BoatsController < ApplicationController
 
   def index
 
+    if params[:query].present?
+      @boats = Boat.where("city ILIKE ?", "%#{params[:query]}%")
+    else
+      @boats = Boat.all
+    end
+
+    skip_policy_scope
+
     @boats_with_location = Boat.where.not(latitude: nil, longitude: nil)
     @boats_without_location = Boat.where(latitude: nil, longitude: nil)
+    # Should be deleted
     @all_boats = @boats_with_location.to_a.concat(@boats_without_location.to_a)
+    # @boats = policy_scope(Boat).order(created_at: :desc)
 
-    @markers = @boats_with_location.map do |boat|
-
-    @boats = policy_scope(Boat).order(created_at: :desc)
-
-    @boats = Boat.where.not(latitude: nil, longitude: nil)
+    # @boats = Boat.where.not(latitude: nil, longitude: nil)
     @markers = @boats.map do |boat|
       {
         lat: boat.latitude,
-        lng: boat.longitude#,
+        lng: boat.longitude
       }
-      end
     end
   end
 
@@ -66,7 +71,7 @@ class BoatsController < ApplicationController
   private
 
   def boat_params
-    params.require(:boat).permit(:name, :price, :description, :category, :capacity, :photo)
+    params.require(:boat).permit(:name, :price, :description, :city, :category, :capacity, :photo)
   end
 end
 
