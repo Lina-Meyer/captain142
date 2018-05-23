@@ -8,8 +8,8 @@ body {
     position: relative;
     white-space: nowrap;
     overflow-x: hidden;
-    height: 25.5em;
-    width: 41.5em;
+    height: 28em;
+    width: 65em;
     top: 9vh;
     margin: auto;
 }
@@ -26,8 +26,8 @@ body {
   z-index: -1;
   font-family: sans-serif;
   line-height: 20em;
-  width: 8em;
-  height: 12em;
+  width: 12em;
+  height: 19em;
   //filter: brightness(60%);
  // background: rgba(0,0,0,0.8);
   background-image: url("cocktail.jpg");
@@ -74,7 +74,7 @@ body {
   cursor: pointer;
   background: rgba(255,255,255,0.1);
   padding: 0 2em;
-  line-height: 400px;
+  line-height: 500px;
   transition: background 0.3s ease;
   svg {
     fill: #e2e2e2;
