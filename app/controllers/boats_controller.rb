@@ -7,6 +7,12 @@ class BoatsController < ApplicationController
     authorize @boats
   end
 
+  def own_boats
+    @boats = policy_scope(Boat).order(created_at: :desc)
+    @boat = current_user.owned_boats
+    authorize @boat
+  end
+
   def index
     @boats = policy_scope(Boat).order(created_at: :desc)
 

@@ -1,11 +1,15 @@
 class BoatPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
   end
 
   def home?
+    true
+  end
+
+  def own_boats?
     true
   end
 
