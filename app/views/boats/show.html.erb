@@ -1,18 +1,35 @@
 <div class="container">
-  <h1>Selected Boat</h1>
-
-  <h2><%= @boat.name %></h2>
-  <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
-  <ul>
-    <li>
-      <%= @boat.category%>
-      <%= @boat.description %>
-      <%= @boat.price %>
-      <%= @boat.city %>
-      <%= @boat.capacity %>
-    </li>
-  </ul>
-  <br><br>
-  <%=link_to "See all boats", boats_path%>
+  <div class="row">
+    <div class="col-xs-12 col-md-5">
+      <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
+      <h2 class=""><%= @boat.name %></h2>
+    </div>
+    <div class="col-xs-12 col-md-7 boat-description">
+      <ul>
+        <li>
+          <%= @boat.city %>
+          <li>
+          <%= @boat.price %>
+          </li>
+          <li>
+          <%= @boat.category%>
+          </li>
+          <li>
+          <%= @boat.description %>
+          </li>
+          <li>
+          <%= @boat.capacity %>
+          </li>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <h3 class=""><%=link_to "See all boats", boats_path%></h3>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <%= render "map" %>
+    </div>
+  </div>
 </div>
-<%= render "map" %>

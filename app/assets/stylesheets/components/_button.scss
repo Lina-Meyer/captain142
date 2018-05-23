@@ -2,3 +2,14 @@
   background-color: #315376;
   color: white;
 }
+
+.back-all-boats-btn {
+  align-self: flex-end;
+  color: red;
+}
+
+.back-all-boats-btn:hover {
+  color: white;
+  background-color: red;
+  border-color: #C7374B;
+}
