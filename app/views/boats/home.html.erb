@@ -7,22 +7,21 @@
       <h1>theCAPTAIN</h1>
       <p>Rent a boat from local's</p>
 
+      <div class="button">
       <%= form_tag boats_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
+          class: "form-control", id: 'button',
           placeholder: "What's your next destination?"
         %>
       <% end %>
-      <div class="search-bar">
-         <form class="form-search" method="post">
-          <input type="text" class="textbox" placeholder="What's your next destination?">
-          <button type="submit" class="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
-      </div>
+    </div>
+
+
     </div>
 </div>
 
 <%= render 'shared/carrousel', boats: @boats %>
+
+
+
