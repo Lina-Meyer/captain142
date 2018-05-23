@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :boats do
-    resources :bookings, only: :create
+    resources :bookings, only: [:create, :show]
   end
   get 'own_boats', to: 'boats#own_boats', as: :own_boats
 end
