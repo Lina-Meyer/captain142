@@ -11,7 +11,7 @@
     <div>
       <% if current_user.nil? %>
       <% else %>
-        <% if current_user.owned_boats.nil? %>
+        <% if current_user.owned_boats == [] %>
           <div class="navbar-links">
           <%= link_to "Offer your boat for rent", new_boat_path %>
           </div>

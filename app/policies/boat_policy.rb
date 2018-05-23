@@ -29,4 +29,8 @@ class BoatPolicy < ApplicationPolicy
     record.user == user
   end
 
+  def update?
+    record.user == user
+  end
+
 end
