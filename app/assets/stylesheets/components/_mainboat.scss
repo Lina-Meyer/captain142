@@ -5,14 +5,48 @@
 }
 .boat-img {
   margin-top: 30px;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+
+
 }
 .card.col-xs-12.col-md-5 {
   width: 48.667%;
   margin-right: 1%;
+
 }
 
 .card.col-xs-12.col-md-7.boat-description {
   width: 48.667%;
   margin-left: 1%;
   padding-top: 3%;
+  border-radius: 6px;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+
 }
+
+.boat-descriptions{
+  text-align: left;
+  font-size: 16px;
+
+}
+
+.card.boat-description ul {
+  list-style-type: none;
+  text-align: left;
+  padding-left: 0px;
+}
+
+h2.boats-name {
+  text-align: left;
+  padding-left: 0px;
+}
+
+.margin-icon {
+  margin-right: 10px;
+}
+
+.h2.boats-name.p {
+  text-align: left;
+}
+

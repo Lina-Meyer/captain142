@@ -2,26 +2,28 @@
   <div class="row">
     <div class="card col-xs-12 col-md-5">
       <img class="card boat-img" src="<%= cl_image_path @boat.photo, height: 300, width: 400, crop: :fill %>" alt="">
-      <h2 class=""><%= @boat.name %></h2>
     </div>
     <div class="card col-xs-12 col-md-7 boat-description">
-      <ul>
-        <li>
-          <%= @boat.city %>
+      <h2 class="boats-name"><%= @boat.name %></h2>
+      <p class="boat-descriptions"><%= @boat.description %></p>
+      <div>
+      <ul class="list-inline">
           <li>
-          <%= @boat.price %>
+            <span><i class="fas fa-ship margin-icon"></i><%= @boat.category%></span>
+
           </li>
-          <li>
-          <%= @boat.category%>
+          <li><span><i class="fas fa-map-marker-alt margin-icon"></i><%= @boat.city %></span>
+
           </li>
-          <li>
-          <%= @boat.description %>
-          </li>
-          <li>
-          <%= @boat.capacity %>
+          <li></i><span><i class="fas fa-money-bill margin-icon"></i><%= @boat.price %></span>
+
+            </li>
+          <li></i><span><i class="fas fa-users margin-icon"></i><%= @boat.capacity %></span>
+
           </li>
         </li>
       </ul>
+      </div>
         <%= simple_form_for [@boat, @booking] do |f| %>
       <div class="date_form_picker">
         <input type="text" placeholder="Start Date" name="booking[start_date]" class="form-control datepicker">
