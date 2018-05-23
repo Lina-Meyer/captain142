@@ -22,11 +22,13 @@
           </li>
         </li>
       </ul>
-    <%= simple_form_for [@boat, @booking] do |f| %>
-      <input type="text" name="booking[start_date]" class="form-control datepicker">
-      <input type="text" name="booking[end_date]" class="form-control datepicker">
-      <%= f.submit %>
-    <% end %>
+        <%= simple_form_for [@boat, @booking] do |f| %>
+      <div class="date_form_picker">
+        <input type="text" placeholder="Start Date" name="booking[start_date]" class="form-control datepicker">
+        <input type="text" placeholder="End Date" name="booking[end_date]" class="form-control datepicker">
+        <%= f.submit value: "Go", id: "date_picker_button"  %>
+      </div>
+      <% end %>
     </div>
   </div>
   <div class="row">
