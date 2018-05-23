@@ -1,4 +1,7 @@
+
+<div class="header-index">
 <h1>All boats</h1>
+</div>
 
 <%= render 'shared/flashes' %>
 <div class="boat-container">
@@ -14,7 +17,7 @@
           </div>
           <% else %>
           <div class="card-body flat-card_images" style="background-image: url('https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=049ea2defdc21889ecda0e93a7eecf05&auto=format&fit=crop&w=1050&q=80')">
-            <h4><%= link_to boat.name, boat_path(boat)%></h4>
+            <h4 class="card-boat-name"><%= link_to boat.name, boat_path(boat)%></h4>
           </div>
           <% end %>
         </div>
@@ -28,7 +31,7 @@
   height: 600px;"
   data-markers="<%= @markers.to_json %>"></div>
 </div>
-<div class="btn red-button">
+<div class="btn btn-primary add-space-all button-font">
     <%= link_to "Offer your boat for rent", new_boat_path %>
   </div>
 
