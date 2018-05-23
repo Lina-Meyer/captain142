@@ -56,12 +56,22 @@ class BoatsController < ApplicationController
   end
 
   def edit
+    @boat = Boat.find(params[:id])
+    authorize @boat
   end
 
   def update
+    @boat = Boat.find(params[:id])
+    authorize @boat
+    @boat.update(boat_params)
+    redirect_to own_boats_path
   end
 
   def destroy
+    @boat = Boat.find(params[:id])
+    authorize @boat
+    @boat.destroy
+    redirect_to own_boats_path
   end
 
   private
