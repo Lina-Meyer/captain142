@@ -22,6 +22,11 @@
           </li>
         </li>
       </ul>
+    <%= simple_form_for [@boat, @booking] do |f| %>
+      <input type="text" name="booking[start_date]" class="form-control datepicker">
+      <input type="text" name="booking[end_date]" class="form-control datepicker">
+      <%= f.submit %>
+    <% end %>
     </div>
   </div>
   <div class="row">
@@ -33,3 +38,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag "datepicker" %>

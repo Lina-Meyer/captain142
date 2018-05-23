@@ -19,9 +19,9 @@ class BoatsController < ApplicationController
     else
       @boats = Boat.all
     end
-    
+
     skip_policy_scope
-    
+
     @boats_with_location = Boat.where.not(latitude: nil, longitude: nil)
     @all_boats = policy_scope(Boat).order(created_at: :desc)
 
@@ -35,6 +35,7 @@ class BoatsController < ApplicationController
 
   def show
     @boat = Boat.find(params[:id])
+    @booking = Booking.new
     authorize @boat
   end
 
