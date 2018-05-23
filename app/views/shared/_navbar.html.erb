@@ -8,7 +8,16 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
+    <div>
+      <% if current_user.nil? %>
+      <% else %>
+        <% if current_user.owned_boats.nil? %>
+          <%= link_to "Offer your boat for rent", new_boat_path %>
+        <% else %>
+          <%= link_to "Your boat offers", own_boats_path %>
+        <% end %>
+      <% end %>
+    </div>
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
