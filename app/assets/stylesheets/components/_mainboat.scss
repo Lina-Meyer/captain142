@@ -1,4 +1,17 @@
 .boat-description {
   height: 400px;
-  background-color: white
+  background-color: white;
+  margin-top: 30px;
+}
+.boat-img {
+  margin-top: 30px;
+}
+.card.col-xs-12.col-md-5 {
+  width: 48.667%;
+  margin-right: 15px;
+}
+
+.card.col-xs-12.col-md-7.boat-description {
+  width: 48.667%;
+  margin-left: 15px;
 }
