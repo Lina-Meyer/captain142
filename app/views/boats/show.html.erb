@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-md-5">
-      <%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
+    <div class="card col-xs-12 col-md-5">
+      <img class="card boat-img" src="<%= cl_image_path @boat.photo, height: 300, width: 400, crop: :fill %>" alt="">
       <h2 class=""><%= @boat.name %></h2>
     </div>
-    <div class="col-xs-12 col-md-7 boat-description">
+    <div class="card col-xs-12 col-md-7 boat-description">
       <ul>
         <li>
           <%= @boat.city %>
