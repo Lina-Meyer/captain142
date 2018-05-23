@@ -1,24 +1,40 @@
-.new-boat-header{
-  margin-top: 70px;
-  margin-bottom: 5vh;
+
+
+.cont {
+  width: 60%;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  padding-top: 20px;
 }
 
-.field-group {
-  margin: 0 auto;
-  width: 50%;
-
-
-  .form-control{
-    height: 50px;
-    text-align: center;
-    margin: 30px;
-
+.form-group {
+  margin: 22px;
+  .form-photo {
+    margin-top: 15px;
   }
-  .input {
-    margin-left: 60px;
+  .form-control {
+    border-radius: 4px;
+  }
+}
 
-  }
-    .btn.btn-primary {
-    margin-bottom: 50px;
-  }
+.new-boat-header h1 {
+  padding-top: 100px;
+  font-family: 'Montserrat';
+  font-size: 40px;
+  font-weight: 300;
+}
+
+
+.btn-primary {
+  color: #C7374B;;
+  font-family: 'Montserrat';
+  background-color: white;
+  border-color: #C7374B;
+  border-radius: 4px;
+}
+
+.btn-primary:hover {
+  color: white;
+  background-color: #C7374B;
+  border-color: #C7374B;
 }

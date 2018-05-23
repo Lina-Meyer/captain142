@@ -1,4 +1,5 @@
-<div class="col-md-8 col-md-offset-2">
+
+<div class="cont">
   <%= simple_form_for(boat) do |f| %>
   <% if boat.errors.any? %>
   <div class="errors-container">
@@ -11,16 +12,18 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.input :name, class: 'form-control', label: false, placeholder: "name" %>
-    <%= f.input :description, class: 'form-control', label: false, placeholder: "description" %>
-    <%= f.input :category, class: 'form-control', label: false, placeholder: "category" %>
-    <%= f.input :city, class: 'form-control', label: false, placeholder: "city" %>
-    <%= f.input :price, class: 'form-control', label: false, placeholder: "price" %>
-    <%= f.input :capacity, class: 'form-control', label: false, placeholder: "capacity" %>
-    <%= f.input :photo %>
+    <%= f.input :name, input_html: {class: 'form-control'}, label: false, placeholder: "name" %>
+    <%= f.input :description, input_html: {class: 'form-control'}, label: false, placeholder: "description" %>
+    <%= f.input :category, input_html: {class: 'form-control'}, label: false, placeholder: "category" %>
+    <%= f.input :city, input_html: {class: 'form-control'}, label: false, placeholder: "city" %>
+    <%= f.input :price, input_html: {class: 'form-control'}, label: false, placeholder: "price" %>
+    <%= f.input :capacity, input_html: {class: 'form-control'}, label: false, placeholder: "capacity" %>
+    <%= f.input :photo,input_html: {class: 'form-photo'}, label: false%>
     <%= f.input :photo_cache, as: :hidden %>
   </div>
   <br>
   <%= f.submit class: 'btn btn-primary' %>
   <% end %>
 </div>
+
+

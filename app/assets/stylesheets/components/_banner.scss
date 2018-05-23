@@ -17,18 +17,18 @@
   top: 0;
 }
 .banner h1 {
-  font-family: 'Nunito';
+  font-family: 'Montserrat';
   font-size: 50px;
-  font-weight: bold;
+  font-weight: 500;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
 }
 .banner p {
-  font-family: 'Nunito';
+  font-family: 'Montserrat';
   font-size: 25px;
-  font-weight: lighter;
+  font-weight: 300;
   color: rgb(255, 255, 255);
-  opacity: 0.6;
-  margin-bottom: 30px;
+  opacity: 0.8;
+  margin-bottom: 50px;
 }
 
 
@@ -39,7 +39,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  font-family: 'Nunito';
+  font-family: 'Montserrat';
   line-height: 1.5;
   font-size: 13px;
 }
