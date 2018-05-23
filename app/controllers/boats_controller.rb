@@ -29,6 +29,7 @@ class BoatsController < ApplicationController
         lat: boat.latitude,
         lng: boat.longitude#,
       }
+      end
     end
   end
 
@@ -54,15 +55,12 @@ class BoatsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
-
   end
 
   def destroy
-
   end
 
   private
@@ -71,3 +69,4 @@ class BoatsController < ApplicationController
     params.require(:boat).permit(:name, :price, :description, :category, :capacity, :photo)
   end
 end
+
