@@ -2,6 +2,21 @@ class BoatsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
+
+  def dashboard
+    @boats = policy_scope(Boat).order(created_at: :desc)
+    @boat = current_user.owned_boats
+    @boat_requested = current_user.owned_boats.where(status: "pending")
+
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+    @booking = current_user.bookings
+    boats_id = current_user.owned_boats.pluck(:id)
+    @booking_status = Booking.where(boat_id: boats_id)
+    @bookings_all = Booking.where(boat_id: boats_id)
+    authorize @boat
+
+  end
+
   def home
     @boats = Boat.all
     authorize @boats
@@ -14,18 +29,24 @@ class BoatsController < ApplicationController
   end
 
   def index
-    if params[:query].present?
-      @boats = Boat.where("city ILIKE ?", "%#{params[:query]}%")
+    if params[:location].present?
+      @boats = Boat.where("city ILIKE ?", "%#{params[:location]}%")
+      if params[:categories].present?
+        @boats = @boats.where(category: params[:categories].split(' '))
+      end
+      if params[:capacity].present?
+        @boats = @boats.where('capacity >= ?', params[:capacity].to_i)
+      end
+      if params[:max_price].present?
+        @boats = @boats.where('price <= ?', params[:max_price].to_i)
+      end
     else
       @boats = Boat.all
     end
 
     skip_policy_scope
 
-    @boats_with_location = Boat.where.not(latitude: nil, longitude: nil)
-    @all_boats = policy_scope(Boat).order(created_at: :desc)
-
-    @markers = @boats_with_location.map do |boat|
+    @markers = @boats.map do |boat|
        {
         lat: boat.latitude,
         lng: boat.longitude
