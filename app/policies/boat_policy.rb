@@ -5,6 +5,10 @@ class BoatPolicy < ApplicationPolicy
     end
   end
 
+  def dashboard?
+    true
+  end
+
   def home?
     true
   end

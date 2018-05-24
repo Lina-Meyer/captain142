@@ -7,5 +7,12 @@ Rails.application.routes.draw do
   resources :boats do
     resources :bookings, only: [:create, :show]
   end
+
+
+  patch '/bookings/:id/accept', to: 'bookings#accept', as: :accept_booking
+  patch '/bookings/:id/decline', to: 'bookings#decline', as: :decline_booking
+
+
   get 'own_boats', to: 'boats#own_boats', as: :own_boats
+  get 'dashboard', to: 'boats#dashboard', as: :dashboard
 end

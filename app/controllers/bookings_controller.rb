@@ -19,10 +19,33 @@ class BookingsController < ApplicationController
     redirect_to boat_booking_path(@boat, @booking)
   end
 
+  def accept
+    booking = Booking.find(params[:id])
+    booking.status = 'accepted'
+    authorize booking
+    booking.save
+    redirect_back(fallback_location: dashboard_path)
+  end
+
+  def decline
+    booking = Booking.find(params[:id])
+    booking.status = 'declined'
+    authorize booking
+    booking.save
+    redirect_back(fallback_location: dashboard_path)
+  end
+
+  def destroy
+
+  end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    dates = params.require(:booking).permit(:start_date, :end_date, :status)
+    return {
+      start_date: Date.strptime(dates[:start_date], '%m/%d/%Y').to_date,
+      end_date: Date.strptime(dates[:end_date], '%m/%d/%Y').to_date
+    }
   end
 end

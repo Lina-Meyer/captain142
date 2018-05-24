@@ -1,40 +1,56 @@
 .banner-content{
+  position: relative;
   display: flex;
   justify-content: center;
   flex-direction: column;
-
-}
-
-.banner {
-  color: white;
+  height: calc(100vh - 60px);
   text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-}
-.banner h1 {
-  font-family: 'Montserrat';
-  font-size: 50px;
-  font-weight: 500;
-  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
-}
-.banner p {
-  font-family: 'Montserrat';
-  font-size: 25px;
-  font-weight: 300;
-  color: rgb(255, 255, 255);
-  opacity: 0.87;
-  margin-bottom: 50px;
+  background: rgba(127, 127, 127, 0.5);
+  background-image: radial-gradient(black 33%, transparent 33%);
+  background-size: 2px 2px;
+  h1 {
+    font-family: 'Montserrat';
+    font-size: 50px;
+    font-weight: 500;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+  }
+  p {
+    font-family: 'Montserrat';
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    margin-bottom: 50px;
+    text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+
+  }
 }
 
+.header-home{
+  h1{
+   text-align: center;
+  }
+}
+
+.video{
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // z-index: -1;
+    // width: 100vw;
+position: absolute;
+bottom: 0;
+right: 0;
+min-width: 100%;
+min-height: 100%;
+width: auto;
+height: auto;
+z-index: -1;
+}
 
 
 body {
-  background: url('http://i.hizliresim.com/v4Qykv.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -42,6 +58,7 @@ body {
   font-family: 'Montserrat';
   line-height: 1.5;
   font-size: 13px;
+  background-color: white;
 }
 
 
@@ -50,7 +67,9 @@ body {
   background-color: #FFF;
   }
 
-
+  .home-search {
+    margin: 0px auto;
+  }
 
 
   #button {
@@ -84,5 +103,6 @@ body {
   #button::placeholder {
     color: rgba(199, 55, 75, 0.9);
     font-size: 20px;
+
 
   }

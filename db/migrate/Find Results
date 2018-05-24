@@ -1,0 +1,10 @@
+Searching 175 files for "rowboat"
+
+/Users/daniamaciel/code/Lina-Meyer/captain142/app/views/boats/index.html.erb:
+   27          <p>Yatch</p>
+   28          <p>Partyboat</p>
+   29:         <p>Rowboat</p>
+   30          <p>Speedboat</p>
+   31        </div>
+
+1 match in 1 file
