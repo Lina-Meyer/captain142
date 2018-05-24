@@ -1,4 +1,9 @@
 
 <div class="confirmation">
-<h3> Congratulations bro, you enquired the boat <%=@boat.name%>! We will notify you as soon as your host has accepted your booking. </h3>
+  <div> <i class="fas fa-check-circle confirmation-button"></i>
+    <div class="confirmation-text">
+    <h3> Congratulations bro, you enquired the boat <%=@boat.name%> from <%=@booking.start_date%> to <%=@booking.end_date%> for €<%= ((@booking.end_date - @booking.start_date).to_i)* @boat.price %>! The boat is a <%=@boat.category%> and has space for <%=@boat.capacity-1%> more people. We will notify you as soon as your host has accepted your booking. </h3>
+
+    </div>
+  </div>
 </div>

@@ -1,5 +1,26 @@
 .confirmation {
-  margin: 100px;
-  padding: 20px;
-  background-color: grey;
+  margin-top: 10%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 10%;
+  padding: 50px 20px;
+  background-color: #eeeeee;
+  border-radius: 6px;
+}
+
+.confirmation-text {
+
+  h3 {
+    color: black;
+    opacity: 0.65;
+    padding: 2px;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+}
+
+.confirmation-button {
+  font-size: 80px;
+  color: #00cc44;
+  padding-bottom: 25px;
 }
