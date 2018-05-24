@@ -16,4 +16,8 @@ class BookingPolicy < ApplicationPolicy
   def decline?
     record.user == user
   end
+
+  def destroy?
+    record.user == user
+  end
 end

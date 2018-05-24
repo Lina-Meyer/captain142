@@ -59,7 +59,7 @@
           <% end %>
        </div>
        <div class="footer-own">
-          <%= link_to "Cancel booking", boat_path(@boat), method: :delete, data: {confirm:"Are you sure?"} %>
+          <%= link_to "Cancel booking", boat_booking_path(@boat, booking), method: :delete, data: {confirm:"Are you sure?"} %>
           <div class="btn btn-primary">
             <%= booking.status %>
           </div>
