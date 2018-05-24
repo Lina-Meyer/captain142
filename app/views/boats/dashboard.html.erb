@@ -1,0 +1,115 @@
+
+
+
+
+<h2>Inquiries</h2>
+<div class=container-your-boats>
+  <div class="row">
+    <% @bookings_all.each do |booking| %>
+    <div class="col-md-4">
+      <div class="card-own">
+        <div class="body-own">
+          <% unless booking.boat.photo.blank? %>
+          <div class="card-own-body flat-card_images" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+          url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill %>')">
+          <h4 class="name-design"><%= link_to booking.boat.name, boat_path(@boat)%></h4>
+          </div>
+          <% else %>
+          <div class="card-own-body flat-card_images" style="background-image: url('https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=049ea2defdc21889ecda0e93a7eecf05&auto=format&fit=crop&w=1050&q=80')">
+            <h4><%= link_to booking.boat.name, boat_path(boat)%></h4>
+          </div>
+          <% end %>
+        </div>
+        <div class="footer-own">
+          <div class="btn btn-primary">
+            <%= booking.status %>
+          </div>
+          <div>
+            <% if booking.status == "pending" %>
+            <%= link_to "Accept", accept_booking_path(booking), method: :patch%>
+            <%= link_to "Decline", decline_booking_path(booking), method: :patch%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>
+
+
+
+
+<h2>Your bookings</h2>
+<div class=container-your-boats>
+  <div class="row">
+    <% @booking.each do |booking| %>
+    <div class="col-md-4">
+      <div class="card-own">
+        <div class="body-own">
+          <% unless booking.boat.photo.blank? %>
+            <div class="card-own-body flat-card_images" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+          url('<%= cl_image_path booking.boat.photo, height: 300, width: 400, crop: :fill %>')">
+              <h4 class="name-design"><%= link_to booking.boat.name, boat_path(@boat)%></h4>
+            </div>
+          <% else %>
+            <div class="card-own-body flat-card_images" style="background-image: url('https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=049ea2defdc21889ecda0e93a7eecf05&auto=format&fit=crop&w=1050&q=80')">
+              <h4><%= link_to booking.boat.name, boat_path(boat)%></h4>
+            </div>
+          <% end %>
+       </div>
+       <div class="footer-own">
+          <%= link_to "Cancel booking", boat_path(@boat), method: :delete, data: {confirm:"Are you sure?"} %>
+          <div class="btn btn-primary">
+            <%= booking.status %>
+          </div>
+       </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+<h2>Your boat offers</h2>
+<div class=container-your-boats>
+  <div class="row">
+    <% @boat.each do |boat| %>
+    <div class="col-md-4">
+      <div class="card-own">
+        <div class="body-own">
+          <% unless boat.photo.blank? %>
+            <div class="card-own-body flat-card_images" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+          url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill %>')">
+            <h4 class="name-design"><%= link_to boat.name, boat_path(boat)%></h4>
+            </div>
+          <% else %>
+            <div class="card-own-body flat-card_images" style="background-image: url('https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=049ea2defdc21889ecda0e93a7eecf05&auto=format&fit=crop&w=1050&q=80')">
+            <h4><%= link_to boat.name, boat_path(boat)%></h4>
+            </div>
+          <% end %>
+       </div>
+       <div class="footer-own">
+         <div class="edit">
+           <%= link_to edit_boat_path(boat) do %>
+            <i class="glyphicon glyphicon-pencil"></i>
+           <% end %>
+         </div>
+         <div class="delete">
+           <%= link_to boat_path(boat), method: :delete, data: {confirm:"Are you sure?"} do %>
+             <i class="glyphicon glyphicon-trash"></i>
+           <% end %>
+         </div>
+       </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+
