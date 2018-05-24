@@ -2,6 +2,21 @@ class BoatsController < ApplicationController
 
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
+
+  def dashboard
+    @boats = policy_scope(Boat).order(created_at: :desc)
+    @boat = current_user.owned_boats
+    @boat_requested = current_user.owned_boats.where(status: "pending")
+
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+    @booking = current_user.bookings
+    boats_id = current_user.owned_boats.pluck(:id)
+    @booking_status = Booking.where(boat_id: boats_id)
+    @bookings_all = Booking.where(boat_id: boats_id)
+    authorize @boat
+
+  end
+
   def home
     @boats = Boat.all
     authorize @boats

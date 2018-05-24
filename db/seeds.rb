@@ -5,7 +5,8 @@ Boat.destroy_all
 Booking.destroy_all
 
 User.create(email: "user@gmail.com", password: "123123")
-User.create(email: "user@gmail.com", password: "123123")
+
+
 
 users = User.all
 prices = [10, 100, 1000, 10000, 100000]
@@ -34,3 +35,5 @@ urls = [
   boat.remote_photo_url = photo
   boat.save
 end
+
+
