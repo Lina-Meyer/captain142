@@ -9,8 +9,8 @@
 
       <div class="button">
       <%= form_tag boats_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
+        <%= text_field_tag :location,
+          params[:location],
           class: "form-control", id: 'button',
           placeholder: "What's your next destination?"
         %>
