@@ -24,6 +24,7 @@ class BookingsController < ApplicationController
     booking.status = 'accepted'
     authorize booking
     booking.save
+    redirect_back(fallback_location: dashboard_path)
   end
 
   def decline
@@ -31,6 +32,11 @@ class BookingsController < ApplicationController
     booking.status = 'declined'
     authorize booking
     booking.save
+    redirect_back(fallback_location: dashboard_path)
+  end
+
+  def destroy
+
   end
 
   private
