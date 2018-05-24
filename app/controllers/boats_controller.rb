@@ -22,10 +22,7 @@ class BoatsController < ApplicationController
 
     skip_policy_scope
 
-    @boats_with_location = Boat.where.not(latitude: nil, longitude: nil)
-    @all_boats = policy_scope(Boat).order(created_at: :desc)
-
-    @markers = @boats_with_location.map do |boat|
+    @markers = @boats.map do |boat|
        {
         lat: boat.latitude,
         lng: boat.longitude
