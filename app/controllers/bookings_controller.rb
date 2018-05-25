@@ -1,8 +1,8 @@
 class BookingsController < ApplicationController
+
   def show
-    @boat = Boat.find(params[:boat_id])
-    authorize @boat
     @booking = Booking.find(params[:id])
+    @boat = @booking.boat
     authorize @booking
   end
   def create
@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.save
 
     authorize @booking
-    redirect_to boat_booking_path(@boat, @booking)
+    redirect_to booking_path(@booking)
   end
 
   def accept
