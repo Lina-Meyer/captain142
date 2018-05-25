@@ -5,8 +5,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   resources :boats do
-    resources :bookings, only: [:create, :show, :destroy]
+    resources :bookings, only: [:create, :destroy] do
+      resources :reviews, only: [:create]
+    end
   end
+
+   resources :bookings, only: [:show] do
+      resources :reviews, only: [:new, :create]
+    end
 
 
   patch '/bookings/:id/accept', to: 'bookings#accept', as: :accept_booking
