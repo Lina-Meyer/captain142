@@ -6,6 +6,9 @@
     <% end %>
   </div>
 
+  <% if params[:controller] == 'boats' && params[:action] == 'index' %>
+    <input type="text" id="search-location" value="<%= params[:location] %>">
+  <% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <div>
