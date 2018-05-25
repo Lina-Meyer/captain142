@@ -1,7 +1,15 @@
-<div>
-  <%= simple_form_for [@booking,@review] do |f| %>
-    <%= f.input :content %>
-    <%= f.input :stars %>
-    <%= f.submit class: "btn btn-primary" %>
-  <% end %>
+<div class="cont">
+  <div class="header-review">
+  <h2> Create a review</h2>
+  </div>
+  <div class="form-group">
+    <%= simple_form_for [@booking,@review] do |f| %>
+      <%= f.input :content, input_html: {class: 'form-control'}, label: false, placeholder: "content" %>
+      <%= f.input :stars, input_html: {class: 'form-control'}, label: false, placeholder: "stars" %>
+  </div>
+      <%= f.submit class: "btn btn-primary" %>
+    <% end %>
 </div>
+
+
+
