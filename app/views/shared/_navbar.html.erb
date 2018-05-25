@@ -5,7 +5,6 @@
      <%= image_tag "logo.png" %>
     <% end %>
   </div>
-
   <% if params[:controller] == 'boats' && params[:action] == 'index' %>
     <input type="text" id="search-location" value="<%= params[:location] %>">
   <% end %>
