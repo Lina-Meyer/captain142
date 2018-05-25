@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2018_05_25_101611) do
     t.integer "price"
     t.text "description"
     t.string "category"
-    t.boolean "availability", default: true
+    t.boolean "availability"
     t.integer "capacity"
     t.string "city"
     t.bigint "user_id"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_05_25_101611) do
   create_table "bookings", force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
-    t.string "status", default: "pending"
+    t.string "status"
     t.bigint "boat_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false
