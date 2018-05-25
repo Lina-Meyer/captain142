@@ -1,0 +1,85 @@
+.search-container {
+  background-color: white;
+  height: 80px;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
+}
+
+.filter-container {
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters-boat {
+  display: flex;
+  width: 80%;
+}
+
+p:hover {
+  color: #C7374B;
+}
+
+#btn-apply {
+  align-self: flex-start;
+}
+
+#btn-all {
+  padding: 6px 12px;
+}
+
+#search-location {
+  margin-right: 6px;
+  border-radius: 6px;
+  align-self: flex-start;
+  padding: 6px 12px;
+  margin-top: 1.5%;
+  margin-left: -57.9%;
+  border-color: #C7374B;
+
+}
+
+#btn-catergory {
+  margin-right: 6px;
+  border-radius: 6px;
+  color: gray;
+  border-color: gray;
+}
+
+#btn-catergory:hover {
+  color:white;
+  background-color: gray;
+}
+
+#search-capacity {
+  margin-right: 6px;
+  border-radius: 6px;
+  align-self: flex-start;
+  padding: 6px 12px;
+}
+
+#search-price {
+  margin-right: 6px;
+  border-radius: 6px;
+  align-self: flex-start;
+  padding: 6px 12px;
+}
+
+.dropdown-item {
+  padding-left: 6px;
+}
+
+.btn {
+  font-size: 14px;
+}
+
+.body {
+  padding-top: 86px;
+}
+
+.col-md-12 {
+    width: 100%;
+    margin-left: -33px;
+}
