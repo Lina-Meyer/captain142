@@ -4,7 +4,7 @@ User.destroy_all
 Boat.destroy_all
 Booking.destroy_all
 
-User.create(email: "user@gmail.com", password: "123123", email: "test@gmail.com", password: "123123", email: test1@gmail.com, password: "123123")
+User.create(email: "user@gmail.com", password: "123123")
 
 
 
