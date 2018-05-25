@@ -20,6 +20,7 @@ class BoatsController < ApplicationController
   def home
     @boats = Boat.all
     authorize @boats
+    render layout: "homepage"
   end
 
   def own_boats
