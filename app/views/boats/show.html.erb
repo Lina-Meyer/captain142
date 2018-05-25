@@ -7,22 +7,20 @@
       <h2 class="boats-name"><%= @boat.name %></h2>
       <p class="boat-descriptions"><%= @boat.description %></p>
       <div>
-      <ul class="list-inline">
+        <ul class="list-inline">
           <li>
             <span><i class="fas fa-ship margin-icon"></i><%= @boat.category%></span>
-
           </li>
-          <li><span><i class="fas fa-map-marker-alt margin-icon"></i><%= @boat.city %></span>
-
+          <li>
+            <span><i class="fas fa-map-marker-alt margin-icon"></i><%= @boat.city %></span>
           </li>
-          <li></i><span><i class="fas fa-money-bill margin-icon"></i><%= @boat.price %>€</span>
-
-            </li>
-          <li></i><span><i class="fas fa-users margin-icon"></i><%= @boat.capacity %></span>
-
+          <li>
+            <span><i class="fas fa-money-bill margin-icon"></i><%= @boat.price %>€</span>
           </li>
-        </li>
-      </ul>
+          <li>
+            <span><i class="fas fa-users margin-icon"></i><%= @boat.capacity %></span>
+          </li>
+        </ul>
       </div>
         <%= simple_form_for [@boat, @booking] do |f| %>
       <div class="date_form_picker">
@@ -36,6 +34,28 @@
   <div class="row">
     <h3><%=link_to "Back", boats_path, {class: "back-to-boats-button"}%></h3>
   </div>
+  <div style="margin-top:30px;margin-bottom:0">
+    <div class="line"></div>
+  </div>
+  <h2 class="review-header">Reviews</h2>
+
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <% booking.reviews.each do |review| %>
+      <div class="col-md-6">
+        <div class="card-rating">
+          <div class="reviews">
+            <div class="review-content">
+              <%= review.content %>
+            </div>
+            <div class="review-user">
+              <%= booking.user.email %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    <% end %>
 </div>
 
 <%= javascript_pack_tag "datepicker" %>
