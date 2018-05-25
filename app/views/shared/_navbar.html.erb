@@ -5,7 +5,9 @@
      <%= image_tag "logo.png" %>
     <% end %>
   </div>
-
+  <% if params[:controller] == 'boats' && params[:action] == 'index' %>
+    <input type="text" id="search-location" value="<%= params[:location] %>">
+  <% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <div>
@@ -16,9 +18,6 @@
           <%= link_to "Offer your boat for rent", new_boat_path %>
           </div>
         <% else %>
-          <div class="navbar-links">
-          <%= link_to "Your boat offers", own_boats_path %>
-          </div>
         <% end %>
       <% end %>
     </div>

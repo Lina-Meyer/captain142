@@ -93,7 +93,7 @@ class BoatsController < ApplicationController
     @boat = Boat.find(params[:id])
     authorize @boat
     @boat.destroy
-    redirect_to own_boats_path
+    redirect_to dashboard_path
   end
 
   private

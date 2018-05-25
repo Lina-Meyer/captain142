@@ -19,19 +19,25 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-6 search-container">
-      <div class="btn btn-primary" id="btn-all">Show all</div>
-      <input type="text" id="search-location" value="<%= params[:location] %>">
-      <div class="search-category">
-        <p>Sailboat</p>
-        <p>Yatch</p>
-        <p>Partyboat</p>
-        <p>Rowboat</p>
-        <p>Speedboat</p>
+    <div class="col-md-12 search-container">
+      <div class="filter-container">
+        <div class="filters-boat">
+          <div class="dropdown">
+            <div class="btn btn-primary" id="btn-catergory" data-toggle="dropdown">Category</div>
+            <div class="search-category dropdown-menu" aria-labelledby="btn-catergory">
+              <p class="dropdown-item" href="#">Sailboat</p>
+              <p class="dropdown-item" href="#">Yatch</p>
+              <p class="dropdown-item" href="#">Partyboat</p>
+              <p class="dropdown-item" href="#">Rowboat</p>
+              <p class="dropdown-item" href="#">Speedboat</p>
+            </div>
+          </div>
+          <input type="number" id="search-capacity" placeholder="Number of Guests">
+          <input type="number" id="search-price" placeholder="Enter Max Price">
+        </div>
+        <div class="btn btn-primary" id="btn-apply">Apply filters</div>
       </div>
-      <input type="text" id="search-capacity" placeholder="Number of Guests">
-      <input type="text" id="search-price" placeholder="Enter Max Price">
-      <div class="btn btn-primary" id="btn-apply">Apply filters</div>
+      <div class="btn btn-primary" id="btn-all">Show all</div>
     </div>
   </div>
 </div>
