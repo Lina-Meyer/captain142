@@ -1,5 +1,51 @@
 .search-container {
   background-color: white;
-  height: 200px;
+  height: 80px;
   padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
 }
+
+.filter-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filters-boat {
+  display: flex;
+}
+
+p:hover {
+  color: #C7374B;
+}
+
+.btn-apply {
+  align-self: flex-start;
+}
+
+
+#search-location {
+  margin-right: 6px;
+  border-radius: 6px;
+}
+
+#btn-catergory {
+  margin-right: 6px;
+  border-radius: 6px;
+}
+#search-capacity {
+  margin-right: 6px;
+  border-radius: 6px;
+}
+
+#search-price {
+  margin-right: 6px;
+  border-radius: 6px;
+}
+
+.dropdown-item {
+  padding-left: 6px;
+}
+
