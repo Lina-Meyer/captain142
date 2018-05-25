@@ -1,7 +1,6 @@
 
-<div class="header-index">
-<h1>All boats</h1>
-</div>
+<!-- <div class="header-index">
+</div> -->
 <!-- <div id="filtering-btns">
   <button class="btn active" onclick="filterSelection('all')">
   Show all</button>
@@ -16,28 +15,31 @@
   <button class="btn active" onclick="filterSelection('dates')">
   Dates</button>
 </div> -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 search-container">
-      <div class="filter-container">
-        <div class="filters-boat">
-          <div class="dropdown">
-            <div class="btn btn-primary" id="btn-catergory" data-toggle="dropdown">Category</div>
-            <div class="search-category dropdown-menu" aria-labelledby="btn-catergory">
-              <p class="dropdown-item" href="#">Sailboat</p>
-              <p class="dropdown-item" href="#">Yatch</p>
-              <p class="dropdown-item" href="#">Partyboat</p>
-              <p class="dropdown-item" href="#">Rowboat</p>
-              <p class="dropdown-item" href="#">Speedboat</p>
+<div class="search-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="filter-container">
+          <div class="filters-boat">
+            <div class="dropdown">
+              <div class="btn btn-primary" id="btn-catergory" data-toggle="dropdown">Category ˅
+              </div>
+              <div class="search-category dropdown-menu" aria-labelledby="btn-catergory">
+                <p class="dropdown-item" href="#">Sailboat</p>
+                <p class="dropdown-item" href="#">Yatch</p>
+                <p class="dropdown-item" href="#">Partyboat</p>
+                <p class="dropdown-item" href="#">Rowboat</p>
+                <p class="dropdown-item" href="#">Speedboat</p>
+              </div>
             </div>
+            <input type="number" id="search-capacity" placeholder="Number of Guests">
+            <input type="number" id="search-price" placeholder="Enter Max Price">
+            <div class="btn btn-primary" id="btn-apply">Apply filters</div>
           </div>
-          <input type="number" id="search-capacity" placeholder="Number of Guests">
-          <input type="number" id="search-price" placeholder="Enter Max Price">
+          <div class="btn btn-primary" id="btn-all">Display all</div>
         </div>
-        <div class="btn btn-primary" id="btn-apply">Apply filters</div>
+
       </div>
-      <div class="btn btn-primary" id="btn-all">Show all</div>
     </div>
   </div>
 </div>
@@ -52,26 +54,26 @@
           <% unless boat.photo.blank? %>
           <div class="card-body flat-card_images" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
           url('<%= cl_image_path boat.photo, height: 300, width: 400, crop: :fill %>')">
-            <h4 class="card-boat-name"><%= link_to boat.name, boat_path(boat)%></h4>
-          </div>
-          <% else %>
-          <div class="card-body flat-card_images" style="background-image: url('https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=049ea2defdc21889ecda0e93a7eecf05&auto=format&fit=crop&w=1050&q=80')">
-            <h4 class="card-boat-name"><%= link_to boat.name, boat_path(boat)%></h4>
-          </div>
-          <% end %>
+          <h4 class="card-boat-name"><%= link_to boat.name, boat_path(boat)%></h4>
         </div>
+        <% else %>
+        <div class="card-body flat-card_images" style="background-image: url('https://images.unsplash.com/photo-1505159940484-eb2b9f2588e2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=049ea2defdc21889ecda0e93a7eecf05&auto=format&fit=crop&w=1050&q=80')">
+          <h4 class="card-boat-name"><%= link_to boat.name, boat_path(boat)%></h4>
+        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
+    <% end %>
   </div>
-  <div
-  id="map"
-  style="width: 100%;
-  height: 600px;"
-  data-markers="<%= @markers.to_json %>"></div>
+</div>
+<div
+id="map"
+style="width: 100%;
+height: 600px;"
+data-markers="<%= @markers.to_json %>"></div>
 </div>
 <div class="btn btn-primary add-space-all button-font">
-    <%= link_to "Offer your boat for rent", new_boat_path %>
+  <%= link_to "Offer your boat for rent", new_boat_path %>
 </div>
 
 <%= javascript_pack_tag "search" %>
