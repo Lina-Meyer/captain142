@@ -13,11 +13,12 @@ prices = [10, 100, 1000, 10000, 100000]
 capacities = [1,2,3,4,5,6,7,8,9,10]
 cities = ['Berlin', 'London', 'Paris', 'Amsterdam', 'Barcelona']
 urls = [
-  'http://res.cloudinary.com/linameyer/image/upload/v1527087057/q5ounjkwr3bswhfkmmxf.jpg',
-  'http://res.cloudinary.com/linameyer/image/upload/v1527083380/hucqdwhzygmd6y7egmvt.jpg',
+  'http://res.cloudinary.com/dahnkneeah/image/upload/v1527257582/3cd3c5dd614ba94ff1f3b8e4f718c1a9.jpg',
+  'http://res.cloudinary.com/dahnkneeah/image/upload/v1527257736/21f5f2a913c8a591a07ac82847e2f134.jpg',
   'http://res.cloudinary.com/linameyer/image/upload/v1527078838/oytqkh5q4e1now8b0xtu.jpg',
   'http://res.cloudinary.com/linameyer/image/upload/v1527005394/ycfom2jzmpgqqia9cfoi.jpg',
-  'http://res.cloudinary.com/linameyer/image/upload/v1527087229/toaw7c86w7xsvvr9ydjd.jpg'
+  'http://res.cloudinary.com/dahnkneeah/image/upload/v1527257829/5b8297d87779e0732cc021ac0ec65ef7.jpg',
+
 ]
 
 5.times do
